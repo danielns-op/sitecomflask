@@ -2,17 +2,34 @@
 {% block title %}Jogo de Cartas{% endblock %}
 
 {% block content %}
-    <div>
-        <h1 class="jogo_cartas">Jogo de Cartas</h1>
-    </div>
-    <div class="row jogo_cartas">
-        <div class="col" id="jogador">
-            <p>Jogador</p>
-            <img src="{{ image_jogador }}" alt="">
-        </div>
-        <div class="col" id="bot">
-            <p>Bot</p>
-            <img src="{{ image_bot }}" alt="">
-        </div>
+
+    <div class="container my-5 post-home">
+            <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg subject-block">
+                <div class="px-4 pt-5 my-5 text-center">
+                    <h2 class="display-4 fw-bold lh-1">Jogo de Cartas</h2>
+                    <div class="row">
+                        <div class="col-6">
+                            <h3>Jogador</h3>
+                            <img src="{{ image_jogador }}" alt="carta do jogador">
+                        </div>
+                        <div class="col-6">
+                            <h3>Bot</h3>
+                            <img src="{{ image_bot }}" alt="carta do bot">
+                        </div>
+                    </div>
+                    <div>
+                        {% if vencedor == "empate" %}
+                            <p class="p_primario">Jogo saiu empatado, jogue novamente.</p>
+                        {% else %}
+                            <p class="p_primario">{{ vencedor }} venceu!</p>
+                        {% endif %}
+                    </div>
+                    <a href="{{ url_for('jogo_cartas') }}" role="button">
+                        <div class="d-grid gap-2 d-md-flex justify-content-sm-center mb-4 mb-lg-3">
+                            <button type="button" href="{{ url_for('pega_conselho_api') }}" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">Jogar novamente</button>
+                        </div>
+                    </a>
+                </div>
+            </div>
     </div>
 {% endblock %}

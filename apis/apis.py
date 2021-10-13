@@ -47,7 +47,7 @@ def jogo_de_cartas():
     LISTA_NIPE = ['HEARTS', 'CLUBS', 'DIAMONDS', 'SPADES']
     LISTA_NIPE_TRADUZIDO = ['Coração', 'Paus', 'Ouro', 'Espadas']
     VALOR_CARTA = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'JACK', 'QUEEN', 'KING', 'ACE']
-    VALOR_CARTA_TRADUZIDO = ['um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez', 'valete', 'dama', 'rei', 'ás']
+    VALOR_CARTA_TRADUZIDO = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
     
     pega_baralho = requests.get('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1').json()
     id_baralho = pega_baralho['deck_id']

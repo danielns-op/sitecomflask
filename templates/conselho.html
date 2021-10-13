@@ -2,8 +2,18 @@
 {% block title %}Conselho{% endblock %}
 
 {% block content %}
-    <div>
-        <h1>Conselho</h1>
-        <p class="p_primario">"{{ frase_aleatoria }}"</p>
+
+    <div class="container my-5 post-home">
+            <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg subject-block">
+                <div class="px-4 pt-5 my-5 text-center">
+                    <h3 class="display-4 fw-bold lh-1">Conselho</h3>
+                    <p class="p_primario">"{{ frase_aleatoria }}"</p>
+                    <a href="{{ url_for('pega_conselho_api') }}" role="button">
+                        <div class="d-grid gap-2 d-md-flex justify-content-sm-center mb-4 mb-lg-3">
+                            <button type="button" href="{{ url_for('pega_conselho_api') }}" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">Novo conselho</button>
+                        </div>
+                    </a>
+                </div>
+            </div>
     </div>
 {% endblock %}

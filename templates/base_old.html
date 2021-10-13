@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../static/icones/coding.png" type="image/png">
+
+    <!-- Bootstrap -->
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Fim das importações do bootstrap -->
+
+    <!-- Style pessoal -->
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>{% block title %}{% endblock %}</title>
+    {% endblock %}
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <div class="container">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+           <a href="{{ url_for('home') }}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+               <span class="fs-4">Meu site com flask</span>
+           </a>
+           <ul class="nav nav-pills">
+               <li class="nav-item">
+                   <a href="{{ url_for('home') }}" class="nav-link">
+                       <button type="button" class="btn btn-dark btn-outline-secondary">Home</button>
+                    </a>
+               </li>
+               <li class="nav-item">
+                   <a href="{{ url_for('pega_conselho_api') }}" class="nav-link">
+                       <button type="button" class="btn btn-outline-secondary">Conselho</button>
+                   </a>
+               </li>
+               <li class="nav-item">
+                   <a href="#" class="nav-link">
+                       <button type="button" class="btn btn-outline-secondary">Vídeos</button>
+                    </a>
+               </li>
+               <li class="nav-item">
+                   <a href="#" class="nav-link">
+                       <button type="button" class="btn btn-outline-secondary">Sobre</button>
+                    </a>
+               </li>
+           </ul>
+        </header>
+    </div>
+
+    <!-- conteúdo principal -->
+    <div class="container" id="content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- Footer-->
+    <div class="container" id="footer">
+        {% block footer %}
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <div class="col-md-4 d-flex align-items-center">
+                <span class="text-muted">
+                    &copy; Copyright {{ ano_site }} by <a href="https://www.linkedin.com/in/dndas/" target="_blank">Daniels</a>.
+                </span>
+            </div>
+            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                <li class="ms-3">
+                    <a class="text-muted" href="https://www.instagram.com/danielnoronhadasilva/" target="_blank">
+                        <img src="../static/icones/instagram.png" alt="icone do instragram" width="24" height="24">
+                    </a>
+                </li>
+            </ul>
+        </footer>
+        {% endblock %}
+    </div>
+
+    <!-- Bootstrap -->
+    <!-- Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- Separate -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <!-- Fim das importações do bootstrap -->
+</body>
+</html>

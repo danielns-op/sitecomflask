@@ -2,16 +2,49 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-    <h1>Aplicações</h1>
-    <p>Abaixo temos algumas aplicações utilizando APIS bem legais encontradas na internet.</p>
-
-    <div class="row-6">
-        <div class="col separar">
-            <a href="{{ url_for('pega_conselho_api') }}" class="btn btn-outline-secondary" role="button"><h2>Receba um conselho</h2></a>
-        </div>
-        
-        <div class="col separar">
-            <a href="{{ url_for('jogo_cartas') }}" class="btn btn-outline-secondary" role="button"><h2>Jogo de cartas</h2></a>
-        </div>
+    <div class="container my-5 post-home">
+            <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg subject-block">
+                <div class="px-4 pt-5 my-5 text-center">
+                    <h1 class="display-4 fw-bold lh-1">Receba um conselho</h1>
+                    <p class="lead mb-4">Clique no botão e receba um conselho de forma aleatória.</p>
+                    <a href="{{ url_for('pega_conselho_api') }}" role="button">
+                        <div class="d-grid gap-2 d-md-flex justify-content-sm-center mb-4 mb-lg-3">
+                            <button type="button" href="{{ url_for('pega_conselho_api') }}" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">Acessar</button>
+                        </div>
+                    </a>
+                </div>
+            </div>
     </div>
+
+    <div class="divider"></div>
+        
+        <div class="container my-5 post-home">
+            <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg subject-block">
+                <div class="px-4 pt-5 my-5 text-center">
+                    <h1 class="display-4 fw-bold lh-1">Jogo de cartas</h1>
+                    <p class="lead mb-4">Aqui temos um paragráfo explicando um pouco</p>
+                    <a href="{{ url_for('jogo_cartas') }}" role="button">
+                        <div class="d-grid gap-2 d-md-flex justify-content-sm-center mb-4 mb-lg-3">
+                        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold" href="{{ url_for('jogo_cartas') }}">Acessar</button>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="container my-5 post-home">
+            <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg subject-block">
+                <div class="px-4 pt-5 my-5 text-center">
+                    <h1 class="display-4 fw-bold lh-1">Outro assunto aqui</h1>
+                    <p class="lead mb-4">Aqui temos um paragráfo explicando um pouco</p>
+                    <a href="{{ url_for('jogo_cartas') }}" role="button">
+                        <div class="d-grid gap-2 d-md-flex justify-content-sm-center mb-4 mb-lg-3">
+                        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold" href="{{ url_for('jogo_cartas') }}">Acessar</button>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
 {% endblock %}
