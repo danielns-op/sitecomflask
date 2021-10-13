@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Jogo de Cartas{% endblock %}
+
+{% block content %}
+    <div>
+        <h1 class="jogo_cartas">Jogo de Cartas</h1>
+    </div>
+    <div class="row jogo_cartas">
+        <div class="col" id="jogador">
+            <p>Jogador</p>
+            <img src="{{ image_jogador }}" alt="">
+        </div>
+        <div class="col" id="bot">
+            <p>Bot</p>
+            <img src="{{ image_bot }}" alt="">
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+p.p_primario {
+    padding-top: 1.5rem;
+    font-size: 1.5rem;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.separar {
+    padding: 1rem;
+}
+
+.jogo_cartas {
+    align-content: center;
+    text-align: center
+}
