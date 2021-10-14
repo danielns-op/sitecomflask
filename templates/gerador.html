@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}Gerador de Senha{% endblock %}
+
+{% block content %}
+
+    <div class="container my-5 post-home">
+            <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg subject-block">
+                <div class="px-4 pt-5 my-5 text-center">
+                    <h3 class="display-4 fw-bold lh-1">Gerador de senha</h3>
+                </div>
+
+                {% if resultado_senha %}
+                    <div class="d-grid d-md-flex justify-content-sm-center">
+                        <p>Senha gerada com sucesso: {{ resultado_senha }}</p>
+                    </div>
+                {% else %}
+                    <div class="d-grid d-md-flex justify-content-sm-center">
+                        <form class="p_primario" actions="{{ url_for('gera_senha') }}" method="post">
+                            <div class="form-group row">
+                                <label class="col-md-7 col-form-label" for="numeroDeLetras">Quantidade de letras:</label>
+                                <div class="col-sm-5">
+                                    <input class="form-control" type="text" name="letras" placeholder="Quantidade de letras" required="required"/>
+                                </div>
+                            </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-7 col-form-label" for="numeroDeNumeros">Quantidade de números:</label>
+                                    <div class="col-sm-5">
+                                        <input class="form-control" type="text" name="numeros" placeholder="Quantidade de números" required="required"/>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-7 col-form-label" for="numeroDeSimbolos">Quantidade de símbolos:</label>
+                                    <div class="col-sm-5">
+                                        <input class="form-control" type="text" name="simbolos" placeholder="Quantidade de símbolos" required="required"/>
+                                    </div>
+                                </div>
+
+                                <div>
+                                
+                                        <div class="d-grid gap-2 d-md-flex justify-content-sm-center mb-4 mb-lg-3">
+                                            <button type="submit" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">Gerar senha</button>
+                                        </div>
+                                
+                                </div>
+                        </form>
+                    </div>
+                {% endif %}
+    </div>
+{% endblock %}

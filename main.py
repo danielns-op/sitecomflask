@@ -1,6 +1,8 @@
-from apis import apis
+from apis import apis, gerar_senha
 from datetime import datetime
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+from flask.wrappers import Request
+
 
 app = Flask(__name__)
 
@@ -50,6 +52,20 @@ def jogo_cartas():
                         vencedor=vencedor
                         )
 
+@app.route('/gerador_senha', methods=['GET', 'POST'])
+def gera_senha():
+    if request.method == 'POST':
+        senha = gerar_senha.GeraSenha()
+        senha.quant_letras = int(request.form['letras'])
+        senha.quant_numeros = int(request.form['numeros'])
+        senha.quant_simbolos = int(request.form['simbolos'])
+        
+        senha_gerada = senha.gerando_senha()
+        print(senha_gerada)
+        
+        return render_template('gerador.html', resultado_senha=senha_gerada)
+    
+    return render_template('gerador.html')
 
 # Execução
 if __name__ == '__main__':
