@@ -1,19 +1,11 @@
 const inputText = document.getElementById('senha-gerada');
 const copyButton = document.getElementById('copia-senha');
 
-copyButton.addEventListener('click', () => {
-    inputText.ariaSelected();
-    document.addEventListener('copy')
-});
-//function copiaSenha() {
-    //const inputText = document.getElementById('senha-gerada');
-    //const copyButton = document.getElementById('copia-senha');
+copyButton.addEventListener('click', execCopy);
 
-    //inputText.select();
-    //document.addEventListener('copy')
+function execCopy() {
+    inputText.select();
+    document.execCommand('copy');
 
-    //copyButton.addEventListener('click', () => {
-        //inputText.select();
-        //document.addEventListener('copy');
-    //});
-//}
+    alert('Senha cópiada com sucesso!')
+}
