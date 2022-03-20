@@ -41,7 +41,23 @@
                     <p class="lead mb-4">Está precisando gerar uma nova senha e está sem criatividade, acesse essa aplicação e cria suas senhas de forma fácil e segura.</p>
                     <a href="{{ url_for('gera_senha') }}" role="button">
                         <div class="d-grid gap-2 d-md-flex justify-content-sm-center mb-4 mb-lg-3">
-                        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold main-button" href="{{ url_for('jogo_cartas') }}">Acessar</button>
+                        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold main-button" href="{{ url_for('gera_senha') }}">Acessar</button>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+        
+        <div class="container my-5 post-home">
+            <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg subject-block">
+                <div class="px-4 pt-5 my-5 text-center">
+                    <h1 class="display-4 fw-bold lh-1">Outros</h1>
+                    <p class="lead mb-4">Aqui você encontrará direcionamento para assuntos diversos.</p>
+                    <a href="{{ url_for('animation') }}" role="button">
+                        <div class="d-grid gap-2 d-md-flex justify-content-sm-center mb-4 mb-lg-3">
+                        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold main-button" href="{{ url_for('animation') }}">Animação com HTML5 e CSS3</button>
                         </div>
                     </a>
                 </div>

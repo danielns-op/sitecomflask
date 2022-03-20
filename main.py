@@ -67,6 +67,12 @@ def gera_senha():
     
     return render_template('gerador.html')
 
+
+@app.route('/animacao_com_css')
+def animation():
+    return render_template('animation.html')
+
+
 # Execução
 if __name__ == '__main__':
     app.run()
